@@ -25,7 +25,6 @@ numpy>=1.26.0
 python-multipart>=0.0.9
 jq>=1.6.0
 typer>=0.9.0
-emergentintegrations==0.2.0
 # ARCH-AUDIT fix: these were already imported and used by
 # app/modules/shopify/service.py (httpx for Shopify/Razorpay API calls) or
 # are newly required by the Critical #2 export fix (openpyxl for real .xlsx
