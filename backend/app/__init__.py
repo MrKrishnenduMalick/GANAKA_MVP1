@@ -1,0 +1,1 @@
+"""Ganaka Core Platform Service."""

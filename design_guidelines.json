@@ -1,0 +1,122 @@
+{
+  "project_name": "Ganaka MVP",
+  "theme": "light",
+  "archetype": "Swiss & High-Contrast (Authority, Clarity, Truth)",
+  "typography": {
+    "fonts": {
+      "heading": "'Manrope', sans-serif",
+      "body": "'IBM Plex Sans', sans-serif",
+      "mono": "'JetBrains Mono', monospace"
+    },
+    "font_imports": [
+      "@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Manrope:wght@400;500;700;800&display=swap');"
+    ],
+    "scale": {
+      "h1": "text-5xl sm:text-6xl tracking-tighter font-extrabold text-zinc-950",
+      "h2": "text-3xl sm:text-4xl tracking-tight font-bold text-zinc-900",
+      "h3": "text-xl sm:text-2xl font-semibold tracking-tight text-zinc-900",
+      "h4": "text-lg font-medium text-zinc-900",
+      "body": "text-base leading-relaxed font-normal text-zinc-700",
+      "small": "text-sm text-zinc-500",
+      "overline": "text-xs uppercase tracking-[0.15em] font-semibold text-zinc-500",
+      "data_numbers": "font-mono font-medium tracking-tight text-zinc-900"
+    }
+  },
+  "colors": {
+    "background": "#F4F4F5",
+    "surface": "#FFFFFF",
+    "primary": "#0A0F2C",
+    "primary_hover": "#1E293B",
+    "text_main": "#09090B",
+    "text_muted": "#71717A",
+    "border": "#E4E4E7",
+    "finance": {
+      "reconciled": "#059669",
+      "missing": "#E11D48",
+      "pending": "#D97706"
+    }
+  },
+  "visual_enhancers": {
+    "shadows": "Use very subtle shadows `shadow-sm` or crisp 1px borders instead of large blurry drop shadows to maintain sterile financial accuracy.",
+    "borders": "1px solid #E4E4E7 on all cards and tables.",
+    "radius": "Minimal. Use `rounded-md` (6px) or `rounded-sm` (4px). Avoid fully rounded pills unless for badges.",
+    "glassmorphism": "Avoid on financial dashboards (data needs solid backgrounds). Allowed only on Marketing Page sticky nav."
+  },
+  "layouts": {
+    "app_shell": "CSS Grid based sidebar layout. Left Sidebar fixed 260px width, right main content area taking 1fr. Sidebar background white with 1px right border. Main area background zinc-50.",
+    "dashboard_grid": "Bento-style or high-density Grid. `grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6`.",
+    "marketing_container": "Max width 1200px, heavily padded `px-6 py-24 md:py-32`.",
+    "auth_layout": "Centered card `max-w-md` surrounded by a subtle dotted or noise background. Card p-8 with crisp border."
+  },
+  "screens": {
+    "Landing_Page": {
+      "components": ["Hero", "Features Grid", "Trust Bar", "Footer"],
+      "instructions": "High contrast hero. Deep Navy background with white text. Use `Manrope` for big impact. Focus on Indian Shopify D2C."
+    },
+    "Auth_Flow": {
+      "Register": "Form with Name, Email, Password. Below password, show a 4-item checklist for password rules (12+ chars, upper/lower, number, special) with Check/X icons.",
+      "Login": "Email, Password. Show error alert styling for 'Lockout after 5 failed attempts'.",
+      "Verification": "A simple 'Check your email' screen with an envelope icon.",
+      "Reset_Password": "Standard form. Strong button."
+    },
+    "App_Shell": {
+      "Sidebar": "Workspace Switcher at top (dropdown). Links: Dashboard, Reconciliation, Reports, Settings. Bottom: User Profile.",
+      "Topbar": "Breadcrumbs, active period selector, Help, Notifications."
+    },
+    "Workspace_Settings": {
+      "General": "Form for Workspace Name, Timezone (select), Currency (INR default).",
+      "Tolerances": "Inputs for 'Amount mismatch threshold' and 'Refund mismatch threshold'."
+    },
+    "Members_and_Roles": {
+      "Members_Table": "Columns: User, Role, Status, Actions. Badges for roles.",
+      "Invite_Dialog": "Email input and Role select. Uses Shadcn Dialog.",
+      "Roles_Matrix": "Table where rows are permissions (e.g., View Data, Export, Invite Users) and columns are roles (Owner, Admin, Viewer) with Check/Dash icons."
+    },
+    "Active_Sessions": {
+      "layout": "List of sessions showing Browser, OS, IP, Location, Time. Button to 'Revoke' per row, and 'Revoke All' at top."
+    }
+  },
+  "components_usage": {
+    "buttons": "Primary: Deep Navy (`bg-[#0A0F2C] hover:bg-[#1E293B] text-white`). Flat, no shadow, `rounded-md`.",
+    "tables": "Shadcn Table. Header `bg-zinc-50/50`. Tabular figures for all numeric cells.",
+    "forms": "Left-aligned labels. Explicit error messages below fields. Red border on error.",
+    "badges": "Square-ish with subtle background and strong text. e.g. `bg-emerald-100 text-emerald-800`."
+  },
+  "image_urls": {
+    "marketing_hero": {
+      "url": "https://images.unsplash.com/photo-1551288049-bebda4e38f71",
+      "category": "Hero Section",
+      "description": "Graphs on a screen representing financial data"
+    },
+    "marketing_team": {
+      "url": "https://images.unsplash.com/photo-1542744095-fcf48d80b0fd",
+      "category": "About/Features",
+      "description": "Team looking at data"
+    },
+    "sponsor_1": {
+      "url": "https://images.unsplash.com/photo-1763705857736-2b4f16a33758",
+      "category": "Trust/Logos",
+      "description": "Minimal company logo"
+    },
+    "sponsor_2": {
+      "url": "https://images.pexels.com/photos/26576975/pexels-photo-26576975.jpeg",
+      "category": "Trust/Logos",
+      "description": "Minimal text logo"
+    }
+  },
+  "UNIVERSAL_GUIDELINES_FOR_MAIN_AGENT": [
+    "DO NOT use generic centered layouts or simplistic gradients. Create depth via clean borders and whitespace.",
+    "Never apply `transition: all`. Use specific transitions like `transition-colors`.",
+    "DO NOT center align the root `.App` container. Rely on flex/grid for alignment.",
+    "DO NOT use AI emoji characters for icons. ALWAYS use lucide-react.",
+    "All interactive elements MUST have a `data-testid` attribute (e.g., `data-testid=\"login-submit-btn\"`).",
+    "Maintain high contrast. Finance users need clarity, not soft low-contrast grey-on-grey.",
+    "Use standard plain JavaScript (.js/.jsx files), NO TypeScript.",
+    "DO NOT use complete `transparent` background in headers, overlays, or any surface with content underneath it."
+  ],
+  "accessibility": {
+    "contrast": "Ensure 4.5:1 ratio. Text colors must be distinct.",
+    "focus": "Use `focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#0A0F2C]`.",
+    "motion": "Respect prefers-reduced-motion."
+  }
+}

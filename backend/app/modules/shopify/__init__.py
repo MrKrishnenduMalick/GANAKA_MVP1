@@ -1,0 +1,1 @@
+"""Shopify Integration module (Feature 2.1 — OAuth)."""
